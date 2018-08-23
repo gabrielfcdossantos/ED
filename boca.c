@@ -64,6 +64,30 @@ void pos_ordem(tnode * pnode){
 
 
 
+tnode * busca(tnode * pnode, int k){
+    if(pnode == NULL){
+        printf("Não existe Nó na arvore");
+    }
+    if(pnode->reg == k){
+        printf("%d\n",pnode->reg);
+    }
+    if(pnode->reg > k){
+        busca(pnode->esq,k);
+        
+    }
+    if(pnode->reg < k){
+        busca(pnode->dir,k);
+        
+    }
+
+    return pnode;
+
+}
+
+
+
+
+
 
 int main(void){
 
@@ -94,6 +118,12 @@ int main(void){
     printf("-----------------------------------------------------\n" );
 
     desenha_arv(raiz,0);
+    printf("\n" );
+    printf("-----------------------------------------------------\n" );
+
+    busca(raiz,60);
+
+
 
 
 
